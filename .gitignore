@@ -1,15 +1,9 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Archivos locales de Android Studio
+.gradle/
+.idea/
 local.properties
+*.iml
+
+# Archivos generados al compilar
+build/
+app/build/
