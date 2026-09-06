@@ -16,6 +16,10 @@
         android:theme="@style/Theme.Aplicacion1">
 
         <activity
+            android:name=".funcionalidad.crearproducto.vista.CrearProductoActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

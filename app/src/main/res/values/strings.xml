@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Aplicacion1</string>
+    <string name="titulo_crear_producto">Agregar nuevo producto</string>
+    <string name="titulo_producto">Título del producto</string>
+    <string name="precio_producto">Precio</string>
+    <string name="descripcion_producto">Descripción</string>
+    <string name="url_imagen_producto">URL de la imagen</string>
+    <string name="categoria_producto">Categoría</string>
+    <string name="crear_producto">Crear producto</string>
+    <string name="agregar_producto">Agregar producto</string>
 </resources>
