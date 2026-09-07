@@ -18,10 +18,6 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Asigna tu layout XML correspondiente
-        // setContentView(R.layout.activity_cart);
-
         refreshCartUI();
     }
 
@@ -33,7 +29,7 @@ public class CartActivity extends AppCompatActivity {
             if (btnCheckout != null) btnCheckout.setEnabled(false);
             if (tvEmptyMessage != null) {
                 tvEmptyMessage.setVisibility(View.VISIBLE);
-                tvEmptyMessage.setText("Tu carrito está vacío");
+                tvEmptyMessage.setText("Tu carrito está vacío, explora el catálogo");
             }
             if (tvTotal != null) tvTotal.setText("Total: $0.00");
         } else {

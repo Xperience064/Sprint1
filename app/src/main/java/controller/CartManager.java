@@ -40,7 +40,7 @@ public class CartManager {
         }
 
         FakeStoreCartRequest request = new FakeStoreCartRequest(
-                1, "2026-09-05",
+                1, "2026-09-07",
                 Collections.singletonList(new FakeStoreCartRequest.CartProductRequest(newItem.getProductId(), newItem.getQuantity()))
         );
 
@@ -84,7 +84,7 @@ public class CartManager {
 
     private void sendPutApiRequest(int productId, int quantity) {
         FakeStoreCartRequest request = new FakeStoreCartRequest(
-                1, "2026-09-05",
+                1, "2026-09-07",
                 Collections.singletonList(new FakeStoreCartRequest.CartProductRequest(productId, quantity))
         );
         RetrofitClient.getApiService().updateCartApi(productId, request).enqueue(new Callback<Object>() {
