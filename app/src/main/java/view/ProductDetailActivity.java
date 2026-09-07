@@ -11,17 +11,12 @@ import controller.CartManager;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
-    // Simulación del rol del usuario actual
-    private String currentUserRole = "Auditor"; // Cambia a "Cliente" para probar la adición
+    private String currentUserRole = "Auditor"; // Cambia a "Cliente" para probar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Asigna tu layout XML correspondiente
-        // setContentView(R.layout.activity_product_detail);
-
-        // Supongamos que tienes un botón en tu XML con id 'btnAddToCart'
         Button btnAddToCart = new Button(this);
 
         // US09 - Criterio 3: Ocultar botón si es Auditor
