@@ -2,6 +2,7 @@ package com.example.aplicacion1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.aplicacion1.funcionalidad.autenticacion.controlador.ControladorCierreSesion;
 import com.example.aplicacion1.funcionalidad.autenticacion.vista.LoginActivity;
+import com.example.aplicacion1.funcionalidad.crearproducto.vista.CrearProductoActivity;
+import com.example.aplicacion1.modelo.Rol;
 import com.example.aplicacion1.nucleo.carrito.LimpiadorCarrito;
 import com.example.aplicacion1.nucleo.carrito.LimpiadorCarritoLocal;
 import com.example.aplicacion1.nucleo.sesion.GestorSesion;
@@ -49,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnCerrarSesion =
                 findViewById(R.id.btnCerrarSesion);
 
+        Button btnAgregarProducto =
+                findViewById(R.id.btnAgregarProducto);
+
         GestorSesion gestorSesion =
                 new GestorSesionLocal(this);
 
@@ -78,5 +84,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             });
         });
+
+        Rol rol = gestorSesion.obtenerRol();
+
+        if (rol == Rol.ADMINISTRADOR) {
+
+            btnAgregarProducto.setVisibility(View.VISIBLE);
+
+            btnAgregarProducto.setOnClickListener(v -> {
+
+                Intent intent = new Intent(
+                        MainActivity.this,
+                        CrearProductoActivity.class
+                );
+
+                startActivity(intent);
+            });
+
+        } else {
+
+            btnAgregarProducto.setVisibility(View.GONE);
+        }
     }
 }
