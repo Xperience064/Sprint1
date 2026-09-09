@@ -1,4 +1,4 @@
-package com.example.aplicacion1;
+package com.example.aplicacion1.ui.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +9,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aplicacion1.adapter.ProductAdapter;
-import com.example.aplicacion1.viewmodel.ProductViewModel;
+import com.example.aplicacion1.R;
+import com.example.aplicacion1.ui.adapter.ProductAdapter;
+import com.example.aplicacion1.ui.viewmodel.ProductViewModel;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
