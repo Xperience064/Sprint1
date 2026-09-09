@@ -30,6 +30,8 @@ import com.example.aplicacion1.nucleo.carrito.LimpiadorCarritoLocal;
 import com.example.aplicacion1.nucleo.sesion.GestorSesion;
 import com.example.aplicacion1.nucleo.sesion.GestorSesionLocal;
 
+import com.example.aplicacion1.view.ProductDetailActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private ProductViewModel viewModel;
@@ -114,6 +116,27 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        // Método para navegar a la pantalla de detalles de un producto (US05)
+        // Llama a este método al hacer clic sobre un producto de tu catálogo
+        // openProductDetail(1);
+    }
+
+    /**
+     * Abre la actividad de detalle de producto enviando el ID del producto seleccionado.
+     * @param productId ID del producto a consultar en la API.
+     */
+    public void openProductDetail(int productId) {
+        Intent intent = new Intent(MainActivity.this, ProductDetailActivity.class);
+        intent.putExtra("PRODUCT_ID", productId);
+        startActivity(intent);
+
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
                 (v, insets) -> {
@@ -190,5 +213,6 @@ public class MainActivity extends AppCompatActivity {
 
             btnAgregarProducto.setVisibility(View.GONE);
         }
+
     }
 }
