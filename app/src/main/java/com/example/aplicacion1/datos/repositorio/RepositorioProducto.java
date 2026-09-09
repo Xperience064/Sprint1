@@ -22,4 +22,7 @@ public class RepositorioProducto {
     ) {
         return apiProductos.crearProducto(solicitudProducto);
     }
+    public Call<RespuestaProducto> eliminarProducto(int idArticulo) {
+        return apiProductos.eliminarProducto(idArticulo);
+    }
 }
