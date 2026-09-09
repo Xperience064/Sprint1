@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.aplicacion1.MainActivity;
 import com.example.aplicacion1.R;
 import com.example.aplicacion1.datos.repositorio.RepositorioAutenticacion;
 import com.example.aplicacion1.funcionalidad.autenticacion.controlador.ControladorLogin;
@@ -18,6 +17,7 @@ import com.example.aplicacion1.modelo.Rol;
 import com.example.aplicacion1.nucleo.seguridad.MapeadorRol;
 import com.example.aplicacion1.nucleo.sesion.GestorSesion;
 import com.example.aplicacion1.nucleo.sesion.GestorSesionLocal;
+import com.example.aplicacion1.view.MainActivity;
 
 public class LoginActivity extends AppCompatActivity
         implements ControladorLogin.ResultadoLogin {
