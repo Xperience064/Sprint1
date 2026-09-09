@@ -1,34 +1,21 @@
-package com.example.aplicacion1;
+package com.example.aplicacion1.ui.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.ProgressBar;
-
-import android.widget.Button;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aplicacion1.adapter.ProductAdapter;
-import com.example.aplicacion1.viewmodel.ProductViewModel;
+import com.example.aplicacion1.R;
+import com.example.aplicacion1.ui.adapter.ProductAdapter;
+import com.example.aplicacion1.ui.viewmodel.ProductViewModel;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 import java.util.List;
-
-import com.example.aplicacion1.funcionalidad.autenticacion.controlador.ControladorCierreSesion;
-import com.example.aplicacion1.funcionalidad.autenticacion.vista.LoginActivity;
-import com.example.aplicacion1.funcionalidad.crearproducto.vista.CrearProductoActivity;
-import com.example.aplicacion1.modelo.Rol;
-import com.example.aplicacion1.nucleo.carrito.LimpiadorCarrito;
-import com.example.aplicacion1.nucleo.carrito.LimpiadorCarritoLocal;
-import com.example.aplicacion1.nucleo.sesion.GestorSesion;
-import com.example.aplicacion1.nucleo.sesion.GestorSesionLocal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         initViews();
@@ -108,87 +94,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 viewModel.filterByCategory(selectedChip.getText().toString());
             }
-
-
-        EdgeToEdge.enable(this);
-
-        setContentView(R.layout.activity_main);
-
-        ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(R.id.main),
-                (v, insets) -> {
-
-                    Insets systemBars = insets.getInsets(
-                            WindowInsetsCompat.Type.systemBars()
-                    );
-
-                    v.setPadding(
-                            systemBars.left,
-                            systemBars.top,
-                            systemBars.right,
-                            systemBars.bottom
-                    );
-
-                    return insets;
-                }
-        );
-
-        Button btnCerrarSesion =
-                findViewById(R.id.btnCerrarSesion);
-
-        Button btnAgregarProducto =
-                findViewById(R.id.btnAgregarProducto);
-
-        GestorSesion gestorSesion =
-                new GestorSesionLocal(this);
-
-        LimpiadorCarrito limpiadorCarrito =
-                new LimpiadorCarritoLocal(this);
-
-        ControladorCierreSesion controladorCierreSesion =
-                new ControladorCierreSesion(
-                        gestorSesion,
-                        limpiadorCarrito
-                );
-
-        btnCerrarSesion.setOnClickListener(v -> {
-
-            controladorCierreSesion.cerrarSesion(() -> {
-
-                Intent intent = new Intent(
-                        MainActivity.this,
-                        LoginActivity.class
-                );
-
-                intent.setFlags(
-                        Intent.FLAG_ACTIVITY_NEW_TASK
-                                | Intent.FLAG_ACTIVITY_CLEAR_TASK
-                );
-
-                startActivity(intent);
-            });
-
         });
-
-        Rol rol = gestorSesion.obtenerRol();
-
-        if (rol == Rol.ADMINISTRADOR) {
-
-            btnAgregarProducto.setVisibility(View.VISIBLE);
-
-            btnAgregarProducto.setOnClickListener(v -> {
-
-                Intent intent = new Intent(
-                        MainActivity.this,
-                        CrearProductoActivity.class
-                );
-
-                startActivity(intent);
-            });
-
-        } else {
-
-            btnAgregarProducto.setVisibility(View.GONE);
-        }
     }
 }
