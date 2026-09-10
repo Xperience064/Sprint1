@@ -19,38 +19,38 @@
             android:id="@+id/tvProductTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:marginTop="8dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvProductCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_blue_dark"
-            android:marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/holo_blue_dark" />
 
         <TextView
             android:id="@+id/tvProductPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:layout_marginTop="4dp"
             android:textColor="@android:color/holo_green_dark"
-            android:marginTop="4dp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvProductDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:marginTop="12dp"/>
+            android:layout_marginTop="12dp" />
 
-        <!-- Contenedor dinámico de botones -->
         <LinearLayout
             android:id="@+id/layoutAdminButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal" />
 
     </LinearLayout>
+
 </ScrollView>
