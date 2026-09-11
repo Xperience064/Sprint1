@@ -1,0 +1,9 @@
+# Archivos locales de Android Studio
+.gradle/
+.idea/
+local.properties
+*.iml
+
+# Archivos generados al compilar
+build/
+app/build/
